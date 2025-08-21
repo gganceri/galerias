@@ -8,13 +8,13 @@
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Fancybox -->
+  <!-- Fancybox v4 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
   <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 
   <style>
     :root { --btn:#888; --btnHover:#666; --txt:#fff; --font:'Urbanist',sans-serif; }
-    html, body { margin:0; background:transparent; } /* ✅ fondo transparente */
+    html, body { margin:0; background:transparent; }
 
     .wrap {
       min-height:100dvh; 
@@ -33,11 +33,7 @@
     }
     .btn:hover { background:var(--btnHover); transform:translateY(-1px); }
 
-    /* Cámara en SVG */
     .btn svg { width:18px; height:18px; fill:#fff; }
-
-    /* Galería oculta */
-    .hidden { position:absolute; left:-99999px; top:auto; width:1px; height:1px; overflow:hidden; }
   </style>
 </head>
 <body>
@@ -50,30 +46,27 @@
     </button>
   </div>
 
-  <!-- Enlaces de la galería -->
-  <div class="hidden" id="galeria">
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1025_Cortinas-Roller-en-Sala_remix_01k2w368d2e0br1mcgtfe2np6y.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1028_Catalogo-de-Cortinas-Modernas_remix_01k2w3cceaenz8h0e1zs81400m-1.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1047_Piscina-y-Ventanas-Traslucidas_remix_01k2w4ea24e229t4k84g9sm1tp-1.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1103_Cortinas-en-Dormitorio-Diferente_remix_01k2w5c507eswakv954mvrwg51.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1103_Cortinas-en-Nuevo-Estilo_remix_01k2w5bmscegk921shw270c8mw.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1103_Cortinas-Modernas-en-Sala_remix_01k2w5d21kfztsf91dar1fv8s0.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1104_Cortinas-en-Nuevo-Living_remix_01k2w5etycf6krs92mey2zcmnp.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1105_Cortinas-en-Nuevo-Living_remix_01k2w5g39efm6bben0m43vetme-1.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1112_Cortinas-en-Nuevo-Ambiente_remix_01k2w5xjm8ehtr722a1gvpgvsj.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1116_Cambio-a-Cortinas-Blackout_remix_01k2w63dmhet9sjc9jce3tzrwe.jpg"></a>
-    <a data-fancybox="roller" href="https://rollerlink.com/wp-content/uploads/2025/08/20250817_1122_Cortina-Minimalista-Moderna_remix_01k2w6e9mred7aa00mdv0wpwc6.jpg"></a>
-  </div>
-
   <script>
-    document.getElementById('openGallery').addEventListener('click', function () {
-      Fancybox.fromSelector('#galeria a[data-fancybox="roller"]', {
+    document.getElementById("openGallery").addEventListener("click", function () {
+      Fancybox.show([
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1025_Cortinas-Roller-en-Sala_remix_01k2w368d2e0br1mcgtfe2np6y.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1028_Catalogo-de-Cortinas-Modernas_remix_01k2w3cceaenz8h0e1zs81400m-1.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1047_Piscina-y-Ventanas-Traslucidas_remix_01k2w4ea24e229t4k84g9sm1tp-1.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1103_Cortinas-en-Dormitorio-Diferente_remix_01k2w5c507eswakv954mvrwg51.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1103_Cortinas-en-Nuevo-Estilo_remix_01k2w5bmscegk921shw270c8mw.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1103_Cortinas-Modernas-en-Sala_remix_01k2w5d21kfztsf91dar1fv8s0.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1104_Cortinas-en-Nuevo-Living_remix_01k2w5etycf6krs92mey2zcmnp.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1105_Cortinas-en-Nuevo-Living_remix_01k2w5g39efm6bben0m43vetme-1.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1112_Cortinas-en-Nuevo-Ambiente_remix_01k2w5xjm8ehtr722a1gvpgvsj.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1116_Cambio-a-Cortinas-Blackout_remix_01k2w63dmhet9sjc9jce3tzrwe.jpg" },
+        { src: "https://rollerlink.com/wp-content/uploads/2025/08/20250817_1122_Cortina-Minimalista-Moderna_remix_01k2w6e9mred7aa00mdv0wpwc6.jpg" }
+      ], {
         Thumbs: { autoStart: true },
-        Toolbar: { display: ['close'] },
-        dragToClose: true,
+        Toolbar: { display: ["close"] },
         animated: true,
-        showClass: 'fancybox-fadeIn',
-        hideClass: 'fancybox-fadeOut',
+        dragToClose: true,
+        showClass: "fancybox-fadeIn",
+        hideClass: "fancybox-fadeOut"
       });
     });
   </script>
